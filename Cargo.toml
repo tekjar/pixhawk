@@ -1,0 +1,23 @@
+[package]
+name = "pixhawk"
+version = "0.1.0"
+authors = ["raviteja <k.teza1@gmail.com>"]
+
+[dependencies]
+cortex-m-rt = "0.5"
+panic-abort = "0.2"
+cortex-m = "0.5"
+panic-semihosting = "0.3.0"
+cortex-m-semihosting = "0.3"
+
+[dependencies.stm32f4]
+version = "0.2.2"
+features = ["stm32f427", "rt"]
+
+[profile.dev]
+codegen-units = 1
+incremental = false
+
+[profile.release]
+debug = true
+lto = true
